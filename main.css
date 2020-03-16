@@ -1,0 +1,352 @@
+body {
+    background-color: #02060B;
+    height: 120vh;
+}
+
+.center {
+    background-color: #3a3a3a;
+    margin: auto;
+    width: 85%;
+    padding-bottom: 10px;
+    min-height: 100%;
+}
+
+.profileEdit {
+    margin-left:50px;
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.homePage {
+    background-image: url("images/parallaxImg.jpg");
+    min-height: 150px; 
+    width: 30%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 100px auto 0 auto;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playButton {
+    margin: 0 auto;
+    text-align: center;
+    background-color: gold;
+    color : black;  
+    width: 55%;
+    height: 55px;
+    border-radius: 10px;
+    position:relative;
+    border: solid black 2px;
+    padding: 15px 32px;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.playButton:hover {
+    background-color: green;
+}
+
+.wrap {
+    text-align: center;
+    height: 1000px;
+    width: 100%;
+    height: 80vh;
+}
+
+
+.box {
+    margin:0 20px;
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+    background-color: #282929;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+    font-size: 20px;
+}
+
+.webPageMain input[type=text] {
+    width: 40%;
+}
+
+.webPageMain input[type=submit] {
+    margin-top: 5px;
+}
+
+.webPageMain {
+    width: 50%;
+    text-align: center;   
+    background-color: #282929;
+    margin: auto;
+    padding-bottom: 10px;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.commentPage {
+    width: 80%;
+    background-color: #282929;
+    margin: auto;
+    padding-bottom: 10px;
+    height: 100%;
+    border: 1px solid black;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.commentPage p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.profilePage {
+    width: 80%;
+    background-color: #282929;
+    margin: auto;
+    padding: 35px;
+    height: 100%;
+    border: 1px solid black;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.profilePage p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.webPageMain label, p, h1{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.webPageMain p, label {
+    font-size: 18px;
+}
+
+.registerPage {
+    width: 50%;
+    text-align: center;   
+    background-color: white;
+    margin: auto;
+    padding-bottom: 10px;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.profileEdit {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    height: 100%;
+}
+.commentPage {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    word-wrap: break-word;
+    height: 100%;
+}
+
+.menuButtons {
+    background-color: #222222;
+    border: none;
+    color : gold !important;   
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.menuButtons:hover {
+    color: white;
+    transform: scale(1.2);
+    text-shadow: 0 0 2px #3A3A3A, 0 0 3px #3A3A3A, 0 0 5px #3A3A3A, 0 0 5px #3A3A3A, 
+        0 0 8px #3A3A3A, 0 0 5px #3A3A3A, 0 0 5px #3A3A3A;
+}
+
+
+.topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav-centered a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+    float: right;
+}
+
+.headerImage {
+    transition-duration: 0.4s;
+}
+
+.headerImage:hover {
+    transform: scale(1.1); 
+}
+
+input[type=text], input[type=password] {
+    width: 75% !important;
+    height: 40px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #181919;
+    margin-bottom: 25px;
+}
+
+.registerButton {
+    width: 250px;
+    background-color: goldenrod;
+    color: black;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    opacity: 0.9;
+    border: solid black 1px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.registerButton:hover {
+    opacity: 1;
+}
+
+.displayPlayers table {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 25px;
+    color: gold;
+    margin: auto;
+    width: 85%;
+    padding: 10px;
+    min-height: 100%;
+    background-color: #302d2d;
+}
+
+.displayPlayers th {
+    background-color: #222222;
+    padding: 8px;
+}
+
+.displayPlayers td {
+    padding: 8px;
+}
+
+.pazaakcard {
+  
+}
+
+.pazaakCardRow::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.pazaakCard:hover {
+    transform: scale(1.1); 
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Class with image */
+.pazaakCard {
+    float: left;
+    padding: 5px;
+    transition-duration: 0.4s;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.emptyColumn {
+    border: 1px black solid;
+    background-color: white;
+    float: left;
+    width: 115px;
+    height: 145px;
+    padding: 20px;
+}
+
+.columnWhileHeld {
+    border: solid rgb(0, 0, 0) 4px;
+}
+
+.hovered {
+    background: rgba(151, 151, 151, 0.425);
+    border-style: dashed;
+}
+
+.invisible {
+    display: none;
+}
