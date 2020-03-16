@@ -298,10 +298,6 @@ hr {
     padding: 8px;
 }
 
-.pazaakcard {
-  
-}
-
 .pazaakCardRow::after {
     content: "";
     clear: both;
@@ -329,7 +325,7 @@ hr {
     cursor: pointer;
 }
 
-.emptyColumn {
+.emptyCardSlot {
     border: 1px black solid;
     background-color: white;
     float: left;
@@ -338,7 +334,7 @@ hr {
     padding: 20px;
 }
 
-.columnWhileHeld {
+.slotWhileHeld {
     border: solid rgb(0, 0, 0) 4px;
 }
 

@@ -1,29 +1,10 @@
-$( document ).ready(function() {
-  console.log( "ready!" );
-  var positiveCards = [1, 2, 3, 4, 5, 6];
-  var negativeCards = [-1, -2, -3, -4, -5, -6]
-  for (let index = 0; index < positiveCards.length; index++) {
-    console.log(positiveCards[index]);
-    console.log(negativeCards[index]);
-    $('.cardsRow1').append("<img class='pazaakCard' src=images/cards/plus"+positiveCards[index]+".jpg height='120px' width='90px' />");
-    $('.cardsRow2').append("<img class='pazaakCard' src=images/cards/minus"+negativeCards[index]+".jpg height='120px' width='90px' />");
-  }
-
-
-
-
-});
-
-
 const pazaakCard = document.querySelector('.pazaakCard');
-const emptyCardSlot = document.querySelectorAll('.emptyCardSlot');
+const emptyCardSlot = document.querySelectorAll('.emptyCardslot');
 
 // Fill listeners
 pazaakCard.addEventListener('dragstart', dragStart);
 pazaakCard.addEventListener('dragend', dragEnd);
 
-
-;
 
 
 
