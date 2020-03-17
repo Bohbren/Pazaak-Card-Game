@@ -1,17 +1,10 @@
 $( document ).ready(function() {
   console.log( "ready!" );
-  var positiveCards = [1, 2, 3, 4, 5, 6];
-  var negativeCards = [-1, -2, -3, -4, -5, -6]
-  for (let index = 0; index < positiveCards.length; index++) {
-    console.log(positiveCards[index]);
-    console.log(negativeCards[index]);
-    $('.cardsRow1').append("<img class='pazaakCard' src=images/cards/plus"+positiveCards[index]+".jpg height='120px' width='90px' />");
-    $('.cardsRow2').append("<img class='pazaakCard' src=images/cards/minus"+negativeCards[index]+".jpg height='120px' width='90px' />");
+  var cards = [1, 2, 3, 4, 5, 6];
+  for (let index = 0; index < cards.length; index++) {
+    $('.cardsRow1').append("<img class='pazaakCard' src=images/cards/plus"+ cards[index]+".jpg height='120px' width='90px' />");
+    $('.cardsRow2').append("<img class='pazaakCard' src=images/cards/minus"+ -Math.abs(cards[index])+".jpg height='120px' width='90px' />");
   }
-
-
-
-
 });
 
 

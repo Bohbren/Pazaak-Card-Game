@@ -14,28 +14,23 @@
 <body>
     <div class="center">
         <?php include('navbarView.php'); ?>
-        
-        <div class="profilePage">
+
+        <div class="cardSelection">
             <div class="mainBody">
-                <div class="row ">
-                    <!-- <div class="emptyCardSlot"></div>
-                    <div class="emptyCardSlot"></div>
-                    <div class="emptyCardSlot"></div> -->
-                </div>
+
+            </div><br><br>
+            <form action="./index.php" method="post">
+                <button type="submit" class="registerButton">BUILD DECK</button><br><br>
+            </form>
+
+            <h2>Cards<br><small>Drag the cards up to the empty slots to add them from your deck</small></h2>
+            <div class="row">
+                <div class="cardsRow1"></div>
+                <br><br><br><br><br><br>
+                <div class="cardsRow2"></div>
             </div>
+        </div>
 
-
-        </div><br><br>
-        <form action="./index.php" method="post">
-            <input type="hidden" name="action" value="insertDeck">
-            <label style="color: red;"><?php controllerSecurity::xecho($fName) ?></label> <br>
-            <button type="submit" class="registerButton">BUILD DECK</button><br><br>
-        </form>
-
-            <h2>Cards<br><small>Click on cards to add them from your deck</small></h2><br>
-            <div class="cardsRow1"></div>
-            <br />
-            <div class="cardsRow2"></div>
     </div>
 
     </div>
