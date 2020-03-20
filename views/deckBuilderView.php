@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Deck Builder</title>
@@ -17,28 +16,30 @@
 
         <div class="cardSelection">
             <div class="mainBody">
-
-            </div><br><br>
-            <form action="./index.php" method="post">
-                <button type="submit" class="registerButton">BUILD DECK</button><br><br>
-            </form>
+                <div class="board-layout">
+                    <div id='boardlists' class="cardRow1"></div>
+                </div>
+                <div style="clear: both">
+                    <form action="./index.php" method="post"><br>
+                        <button type="submit" class="registerButton">BUILD DECK</button><br><br>
+                    </form>
+                </div>
+            </div><br>
 
             <h2>Cards<br><small>Drag the cards up to the empty slots to add them from your deck</small></h2>
             <div class="row">
                 <div class="cardsRow1"></div>
-                <br><br><br><br><br><br>
                 <div class="cardsRow2"></div>
             </div>
         </div>
-
-    </div>
+        <?php include('footerView.php'); ?>
 
     </div>
     </div> <br>
     </div>
     </div>
 
-    <script src="js\main.js"></script>
+    <script src="js/deckBuilder.js"></script>
 
 </body>
 

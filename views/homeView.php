@@ -23,6 +23,7 @@
                 </center>
             </div>
 
+
             <div class="box">
                 <center>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
@@ -36,7 +37,7 @@
 
     </div>
     <footer>
-
+    <?php include('footerView.php'); ?>
     </footer>
     </div>
 

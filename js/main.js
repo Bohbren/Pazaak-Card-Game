@@ -2,8 +2,8 @@ $( document ).ready(function() {
   console.log( "ready!" );
   var cards = [1, 2, 3, 4, 5, 6];
   for (let index = 0; index < cards.length; index++) {
-    $('.cardsRow1').append("<img class='pazaakCard' src=images/cards/plus"+ cards[index]+".jpg height='120px' width='90px' />");
-    $('.cardsRow2').append("<img class='pazaakCard' src=images/cards/minus"+ -Math.abs(cards[index])+".jpg height='120px' width='90px' />");
+    $('.cardsRow1').append("<img class='pazaakCard' id=card"+cards[index]+" src=images/cards/plus"+ cards[index]+".jpg draggable='true' ondragstart='dragStart(event)' height='120px' width='90px' />");
+    $('.cardsRow2').append("<img class='pazaakCard' id=card"+cards[index]+" src=images/cards/minus"+ -Math.abs(cards[index])+".jpg height='120px' width='90px' />");
   }
 });
 
@@ -14,11 +14,6 @@ const emptyCardSlot = document.querySelectorAll('.emptyCardSlot');
 // Fill listeners
 pazaakCard.addEventListener('dragstart', dragStart);
 pazaakCard.addEventListener('dragend', dragEnd);
-
-
-;
-
-
 
 // Loop through empty boxes and add listeners
 for (const emptyCardSlot of emptyCardSlots) {
