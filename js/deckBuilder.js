@@ -15,44 +15,33 @@ function createSampleSet() {
   //Clears the rows to make a section of newly generated cards
   $(".cardsRow1").html("");
   $(".cardsRow2").html("");
-  //Loops through a set number to generate Pazaak cards
+  //Loops through a set number to generate Pazaak cards and add them to divs with set classes 
   for (let index = 1; index < 7; index++) {
     $('.cardsRow1').append("<img class='pazaakCard' value = "+index+" id=card" + cardIdCounter++ + " src=images/cards/plus" + index + ".jpg draggable='true' alt='A positive Pazaak card with the value of "+ index +"' ondragstart='dragCardStart(event)' height='120px' width='90px' onClick='checkSlot(event)' />");
     $('.cardsRow2').append("<img class='pazaakCard' value = -"+index+" id=cardNegative" + cardIdCounter++ + " src=images/cards/minus" + -Math.abs(index) + ".jpg draggable='true' alt='A negative Pazaak card with the value of "+ index +"' ondragstart='dragCardStart(event)' height='120px' width='90px' onClick='checkSlot(event)' />");
   }
 }
 
+//Removes card from slot if clicked to free up the space - or you could just drag over it with another card
 function checkSlot(ev) {
-  // alert(ev);
-
-  // ev.dataTransfer.setData("text/plain", ev.target.id)
-
-  // let cardId = ev.dataTransfer.getData("text/plain");
-  // let sourceCardSlot = document.getElementById(cardId);
-
-
+  let clickedCard = document.getElementById(ev.target.id)
+  let cardsParentElement = clickedCard.parentElement;
+  if(cardsParentElement.parentElement === document.getElementById("boardlists")) {
+    cardsParentElement.removeChild(clickedCard);
+  }
 }
 
 function allowCardDrop(ev) {
-  console.log("--------------------------------------");
-  console.log("We are in allowCardDrop right now...");
   ev.preventDefault(); // default is not to allow drop
-  console.log("allowCardDrop ev: " + ev);
 }
 
 //When you start dragging a card this function activates with the event of dragStart. It grabs the targets id of the card being dragged
 function dragCardStart(ev) {
-  console.log("--------------------------------------");
-  console.log("We are in dragCardStart right now...");
   ev.dataTransfer.setData("text/plain", ev.target.id);
-  console.log("dragCardStop ev.dataTRansfer.setData('text/plain', ev.target.id): " + ev.dataTransfer);
 }
 
 
 function dropCard(ev) {
-  console.log("--------------------------------------");
-  console.log("We are in drop it right now...");
-
   ev.preventDefault(); // default is not to allow drop
   let cardId = ev.dataTransfer.getData("text/plain");
   let sourceCardSlot = document.getElementById(cardId);
