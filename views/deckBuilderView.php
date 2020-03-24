@@ -17,12 +17,13 @@
         <div class="cardSelection">
             <div class="mainBody">
                 <div class="board-layout">
-                    <div id='boardlists' class="cardRow1"></div>
+                    <div id='boardlists' class="cardRow1"></div>                
+                    <span id="errorMessage" style="float: right; margin-right: 350px; color: red;"></span>
                 </div>
-                <div style="clear: both">
-                    <form action="./index.php" method="post"><br>
-                        <button type="submit" class="registerButton">BUILD DECK</button><br><br>
-                    </form>
+                <div style="clear: both"><br>
+                    <!-- <form action="./index.php" method="post"><br> -->
+                        <button type="submit" class="registerButton" id="buildDeckBtn">BUILD DECK</button><br><br>
+                    <!-- </form> -->
                 </div>
             </div><br>
 

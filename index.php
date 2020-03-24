@@ -40,6 +40,12 @@ switch ($action) {
         include('views/deckBuilderView.php');
         die();
         break;
+    case 'buildDeck':
+        $player = $_SESSION['player'];
+        $errorMessage = "";
+        include('views/homeView.php');
+        die();
+        break;
 }
 
 ?>
