@@ -66,14 +66,15 @@ function dropCard(ev) {
 //listener for build deck button after cards have been selected to create a deck
 document.getElementById("buildDeckBtn").addEventListener("click", function () {
 
-  if(validateDeck == false) {
-    document.getElementById("errorMessage").innerHTML = "test";
-  }
-  else {
-    document.getElementById("errorMessage").innerHTML = "not true";
-  }
+  // if(validateDeck() == false) {
+  //   document.getElementById("errorMessage").innerHTML = "test";
+  // }
+  // else {
+  //   document.getElementById("errorMessage").innerHTML = "not true";
+  // }
 
 
+  //Array holding values of the six chosen cards for a deck
   var cardsToBeBuilt = [document.getElementById("slot0").firstChild.getAttribute('value'), document.getElementById("slot1").firstChild.getAttribute('value'),
     document.getElementById("slot2").firstChild.getAttribute('value'), document.getElementById("slot3").firstChild.getAttribute('value'),
     document.getElementById("slot4").firstChild.getAttribute('value'), document.getElementById("slot5").firstChild.getAttribute('value')
@@ -84,13 +85,12 @@ document.getElementById("buildDeckBtn").addEventListener("click", function () {
 	  console.log('fakeImage: ', fakeImages[i]);
 	}
 
-  //alert(cardsToBeBuilt);
+  console.log(cardsToBeBuilt);
 });
 
 
 //Client-side Validation for building a deck - Serverside is done via PHP
 function validateDeck() {
-  
   if(emptyCard == true) {
     return true;
   }
