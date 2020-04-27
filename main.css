@@ -21,7 +21,6 @@ body {
     width: 50%;
 }
 
-
 .row:after {
     content: "";
     display: table;
@@ -29,7 +28,6 @@ body {
 }
 
 .homePage {
-    background-image: url("images/parallaxImg.jpg");
     min-height: 150px;
     width: 30%;
     background-attachment: fixed;
@@ -246,8 +244,6 @@ hr {
     padding: 8px;
 }
 
-
-
 /* Navbar & Footer shared between pages */
 .menuButtons {
     background-color: #222222;
@@ -313,8 +309,8 @@ hr {
 
 .footer {
     background-color: #333;
-    width:100%;
-    height:30px;
+    width: 100%;
+    height: 30px;
     color: gold;
     width: 85%;
     bottom: 0;
@@ -322,7 +318,7 @@ hr {
     border: 1px solid black;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     color: gold;
- }
+}
 
 /* ----------------------------------------------------------------------- */
 
@@ -343,7 +339,7 @@ hr {
 .pazaakCard {
     transition-duration: 0.4s;
     position: relative;
-    margin: 5px 5px   auto;
+    margin: 5px 5px auto;
     cursor: pointer;
 }
 
@@ -376,14 +372,15 @@ hr {
     float: left;
     width: 75%;
 
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
+}
+
+/* Clear floats after the columns */
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
+
 /* ----------------------------------------------------------------------- */
 
 
@@ -395,23 +392,57 @@ hr {
     top: 5px;
     left: 5px;
     cursor: pointer;
-  }
-  
-  .hold {
+}
+
+.hold {
     border: solid 5px #ccc;
-  }
-  
-  .empty {
+}
+
+.empty {
     display: inline-block;
     height: 160px;
     width: 160px;
     margin: 10px;
     border: solid 3px salmon;
     background: white;
-  }
-  
-  .hovered {
+}
+
+.hovered {
     background: #f4f4f4;
     border-style: dashed;
-  }
-  
+}
+
+/* Profile page */
+.profilePage {
+    width: 80%;
+    background-color: #282929;
+    margin: auto;
+    padding: 35px;
+    height: 100%;
+    border: 1px solid black;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.profilePage p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: gold;
+}
+
+.profileEdit {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    height: 100%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

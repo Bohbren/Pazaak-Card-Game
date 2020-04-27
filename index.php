@@ -22,6 +22,7 @@ require_once("models/validation.php");
 require_once("models/Player.php");
 require_once("models/PlayerDB.php");
 require_once("models/database.php");
+require_once("models/DeckDB.php");
 
 
 //Sets the cookie for the session
@@ -125,6 +126,106 @@ switch ($action) {
         } else {
             include('views/registerView.php');
         }
+        die();
+        break;
+    case 'loginPlayer':
+        $userName = filter_input(INPUT_POST, 'uName');
+        $password = filter_input(INPUT_POST, 'password');
+        $uName = Validation::isNotEmpty($userName, "UserName");
+        $pWord = Validation::checkPassword($password);
+
+        if ($uName === "" && $pWord === "") {
+            $hashedPasswordList = PlayerDB::getPasswordHash($userName);
+            if (!empty($hashedPasswordList)) {
+                $hashedPassword = $hashedPasswordList[0]['password'];
+                if (password_verify($password, $hashedPassword)) {
+                    $playerList = PlayerDB::getPlayer($userName);
+                    $player = new Player($userName, $playerList[0]['firstName'], $playerList[0]['lastName'], $playerList[0]['email'], $playerList[0]['password']);
+                    if (!is_null($playerList[0]['imagePath'])) {
+                        $player->setImagePath($playerList[0]['imagePath']);
+                    }
+                    if (!is_null($playerList[0]['imageExtension'])) {
+                        $player->setImageExt($playerList[0]['imageExtension']);
+                    }
+                    $player->setId($playerList[0]['playerID']);
+                    $_SESSION['player'] = $player;
+                    $decks = DeckDB::select_all($player);
+
+                    $firstName = $player->getFirstName();
+                    $lastName = $player->getLastName();
+                    $email = $player->getEmail();
+                    $password = "";
+                    $fName = "";
+                    $lName = "";
+                    $emailCheck = "";
+                    $pWord = "";
+                    $image = "images/";
+                    if ($player->getImagePath() === NULL || $player->getImagePath() === "") {
+                        $image = $image . "defaultImg.png";
+                    } else {
+                        $image = $image . $player->getImagePath() . $player->getImageExt();
+                    }
+                    $errorMessage = "";
+                    include('views/profilePage.php');
+                } else {
+                    $error = "Username or Password is not correct";
+                    $password = "";
+                    $hashedPasswordList = [];
+                    include('views/loginView.php');
+                }
+            } else {
+                $error = "Username Doesn't exist";
+                $password = "";
+                $hashedPasswordList = [];
+                include('views/loginView.php');
+            }
+        } else {
+            $error = "Username or Password is not correct";
+            $password = "";
+            $hashedPasswordList = [];
+            include('views/loginView.php');
+        }
+        die();
+        break;
+    case 'loginView':
+        $userName = filter_input(INPUT_POST, 'uName');
+        $password = "";
+        $uName = "";
+        $pWord = "";
+        $error = "";
+        include('views/loginView.php');
+        die();
+        break;
+    case 'profileView':
+        $player = $_SESSION['player'];
+        $decks = DeckDB::select_all($player);
+
+        if (empty($player)) {
+            $userName = "";
+            $password = "";
+            $uName = "";
+            $pWord = "";
+            $error = "";
+            include('views/loginPage.php');
+            die();
+        }
+        $firstName = $player->getFirstName();
+        $lastName = $player->getLastName();
+        $email = $player->getEmail();
+        $userName = $player->getUserName();
+        $password = "";
+        $fName = "";
+        $lName = "";
+        $emailCheck = "";
+        $pWord = "";
+        $image = "images/";
+        if ($player->getImagePath() === NULL || $player->getImagePath() === "") {
+            $image = $image . "defaultImg.png";
+        } else {
+            $image = $image . $player->getImagePath() . $player->getImageExt();
+        }
+        $errorMessage = "";
+        include('views/profilePage.php');
         die();
         break;
     
